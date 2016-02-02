@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#PBS -M gk925@nyu.edu
+#PBS -m abe
+#PBS -V
+#PBS -N render_to_photo_register
+#PBS -l nodes=1:ppn=10,mem=20GB,walltime=40:00:00
+
+module purge
+module load centos/bin
+module load matlab/2014a
+
+cd /scratch/gk925/image_registration_spheron/
+
+if [ "$PBS_JOBTMP" == "" ]; then
+    export PBS_JOBTMP=/state/partition1/$USER
+    mkdir -p $PBS_JOBTMP
+fi
+export MATLAB_PREFDIR=$PBS_JOBTMP/$$
+rm -rf $MATLAB_PREFDIR
+mkdir -p $MATLAB_PREFDIR
+
+xvfb-run --server-args="-screen 0 1024x768x24" matlab -nodisplay -r "imregfit_run; exit;" > output.log 2>&1
+
+rm -rf $MATLAB_PREFDIR
+
+exit
+

@@ -11,12 +11,17 @@ function error = imregfit(p)
 %tform(6):
 
 % read in photo
-load('gloss10_ball.mat');
-photo = gloss10_ball;
+load('gloss20_ball.mat');
+photo = gloss20_ball;
 
 % read in render
-load('render0.mat');
+load('render20-30.mat');
 render_b = render_ball;
+
+% im = multispectralImage;
+% render = imcrop(im, [2517 0 379 2707]);
+% render_ball = imcrop(render, [0 1192 379 379]);
+% render_ball = render_ball.*10;
 
 disp('we are in')
 

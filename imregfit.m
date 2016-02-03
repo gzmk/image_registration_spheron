@@ -23,7 +23,7 @@ disp('we are in')
 % build affine transformation matrix
 % for types of affine transformation matrices look here:
 % http://www.mathworks.com/help/images/performing-general-2-d-spatial-transformations.html#f12-33299
-if (p(1)>13 | p(2)<-13 | p(3) > 1.2 | p(4)> 1.2)
+if (p(1)>13 || p(2)<-13 || p(3) > 1.2 || p(4)> 1.2)
     error = 10e9;
     return;
 end

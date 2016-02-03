@@ -11,8 +11,8 @@ function error = imregfit(p)
 %tform(6):
 
 % read in photo
-load('gloss20_ball.mat');
-photo = gloss20_ball;
+load('gloss30_ball.mat');
+photo = gloss30_ball;
 
 % read in render
 load('render20-30.mat');

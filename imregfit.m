@@ -11,8 +11,8 @@ function error = imregfit(p)
 %tform(6):
 
 % read in photo
-load('gloss0_ball.mat');
-photo = gloss0_ball;
+load('gloss10_ball.mat');
+photo = gloss10_ball;
 
 % read in render
 load('render0.mat');
@@ -23,10 +23,10 @@ disp('we are in')
 % build affine transformation matrix
 % for types of affine transformation matrices look here:
 % http://www.mathworks.com/help/images/performing-general-2-d-spatial-transformations.html#f12-33299
-% if (p(1)>13 || p(2)<-13 || p(3) > 1.2 || p(4)> 1.2)
-%     error = 10e9;
-%     return;
-% end
+if (p(1)>20 || p(2)<-20 || p(3) > 1.2 || p(4)> 1.2)
+    error = 10e9;
+    return;
+end
 
 affineM =[p(3) 0 0;
           0 p(4) 0;

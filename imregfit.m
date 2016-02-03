@@ -41,7 +41,7 @@ cx=179;cy=207;ix=379;iy=380;r1=121;r2=121;
 render_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
 
 masked_render = render_mask.*render_b;
-masked_photo = render_mask.*photo;
+masked_photo = render_mask.*J;
 
 % normalize the render and photo
 mean_render = mean(mean(masked_render));

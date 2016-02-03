@@ -27,6 +27,7 @@ affineM =[p(3) 0 0;
           0 p(4) 0;
          p(1) p(2) 1 ];
 
+disp(p)
 tform_translate = maketform('affine',affineM);
 
 % apply transformation matrix to photo

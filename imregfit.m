@@ -11,11 +11,11 @@ function error = imregfit(p)
 %tform(6):
 
 % read in photo
-load('gloss30_ball.mat');
-photo = gloss30_ball;
+load('gloss40_ball.mat');
+photo = gloss40_ball;
 
 % read in render
-load('render20-30.mat');
+load('render40-50.mat');
 render_b = render_ball;
 
 % im = multispectralImage;

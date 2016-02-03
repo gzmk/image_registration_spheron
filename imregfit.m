@@ -16,6 +16,9 @@ photo = gloss0_ball;
 
 % read in render
 load('render0.mat');
+render_b = render_ball;
+
+disp('we are in')
 
 % build affine transformation matrix
 % for types of affine transformation matrices look here:
@@ -27,7 +30,7 @@ affineM =[p(3) 0 0;
 tform_translate = maketform('affine',affineM);
 
 % apply transformation matrix to photo
-Rcb = imref2d(size(photo)); % get spacial ref information
+% Rcb = imref2d(size(photo)); % get spacial ref information
 J = imtransform(photo,tform_translate,'XData',[1 size(photo,2)],'YData',[1 size(photo,1)]);
 
 % apply same mask to both images
@@ -36,7 +39,7 @@ cx=179;cy=207;ix=379;iy=380;r1=121;r2=121;
 [x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
 render_mask=(((x.^2.*r1^2)+(y.^2.*r2^2))<=r1^2*r2^2);
 
-masked_render = render_mask.*render_ball;
+masked_render = render_mask.*render_b;
 masked_photo = render_mask.*photo;
 
 % normalize the render and photo

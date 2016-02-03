@@ -2,12 +2,12 @@
 % author: @gzmk / Gizem Kucukoglu
 % Feb 2, 2016
 
-global photo;
-global render_ball;
+% global photo;
+% global render_ball;
 
 %% choose gloss level
 
-
+disp('hello')
 %% call fminsearch
 
 pinit = [0, 0, 1, 1];

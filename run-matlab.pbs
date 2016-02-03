@@ -10,7 +10,7 @@ module purge
 module load centos/bin
 module load matlab/2014a
 
-cd /scratch/gk925/image_registration_spheron/
+cd /scratch/gk925/image_registration_spheron
 
 if [ "$PBS_JOBTMP" == "" ]; then
     export PBS_JOBTMP=/state/partition1/$USER

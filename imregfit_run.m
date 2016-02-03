@@ -11,6 +11,7 @@ disp('hello')
 %% call fminsearch
 
 pinit = [10, -10, 1.06, 1.06];
-p_fit = fminsearch(@(p) imregfit(p),pinit);
+[p_fit, fval]  = fminsearch(@(p) imregfit(p),pinit);
 
 save('p_fit0.mat','p_fit');
+save('fval0.mat','fval');

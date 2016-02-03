@@ -53,5 +53,6 @@ photoNorm = masked_photo./(mean_photo);
 % calculate sum of squared errors
 diff = renderNorm-photoNorm;
 error = sum(sum(diff.^2));
+disp(error)
 
 return;
